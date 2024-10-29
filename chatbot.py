@@ -2,6 +2,13 @@ import streamlit as st
 import os, utils, opik
 from groq import Groq
 
+# --- Groq 및 Opik API Key 설정 -------------------------------------------------
+# Streamlit Cloud의 secrets 기능을 사용하여 Groq과 Opik API Key를 설정한다.
+# Streamlit Cloud 웹사이트의 앱 설정(settings)에서 secrets 탭을 클릭하여,
+# API Key를 TOML 형식으로 secrets에 저장하면 환경 변수로 설정된다.
+# 이로 인해 Opik의 경우, opik.configure 메서드와 api_key 매개변수를 사용하지 않아도 API 인증이 가능하며, 
+# Groq도 client = Groq(api_key=GROQ_API_KEY)가 아닌 client = Groq()로 간편하게 사용할 수 있다.
+  
 # Groq 초기화
 client = Groq()
 
