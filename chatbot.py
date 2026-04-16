@@ -106,7 +106,7 @@ if prompt := st.chat_input():
     
     # LLM 모델을 사용하여 응답을 생성한다.
     response = client.chat.completions.create(
-        model='gemma2-9b-it',
+        model='llama-3.1-8b-instant',
         messages=context + st.session_state['messages']  # context와 대화 기록을 결합하여 모델에 전달한다.
     )
 
